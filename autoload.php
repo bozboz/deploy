@@ -5,4 +5,4 @@
  * file that was distributed with this source code.
  */
 
-set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . PATH_SEPARATOR . 'src');
+set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__ . '/src');
