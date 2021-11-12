@@ -1,0 +1,20 @@
+{
+    "name": "bozboz/deploy",
+    "require-dev": {
+        "deployer/deployer": "^6",
+        "deployer/recipes": "^6.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Deployer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jim Hollington",
+            "email": "jim@bozboz.co.uk"
+        }
+    ],
+    "require": {}
+}
