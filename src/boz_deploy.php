@@ -41,7 +41,7 @@ task('deploy:prepare', function () {
 });
 
 task('upload', function () {
-    foreach ($sync ?? [] as $from => $to) {
+    foreach (get('sync_assets', []) as $from => $to) {
         upload($from, $to);
     }
 });
