@@ -41,8 +41,9 @@ task('deploy:prepare', function () {
 });
 
 task('upload', function () {
-    upload(__DIR__ . "/public/assets/js/min", '{{release_path}}/public/assets/js/');
-    upload(__DIR__ . "/public/assets/css/min", '{{release_path}}/public/assets/css/');
+    foreach ($sync ?? [] as $from => $to) {
+        upload($from, $to);
+    }
 });
 
 task('deploy:update_code', function () {
