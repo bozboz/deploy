@@ -73,7 +73,7 @@ desc('Deploy your project');
 task('deploy', [
     'deploy:info',
     'deploy:lock',
-    'artisan:down',
+    // 'artisan:down',
     'deploy:update_code',
     'deploy:prepare',
     'deploy:vendors',
@@ -82,7 +82,7 @@ task('deploy', [
     'artisan:view:cache',
     'artisan:optimize',
     'upload',
-    'artisan:up',
+    // 'artisan:up',
     'deploy:unlock',
 ]);
 
