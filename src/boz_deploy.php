@@ -55,14 +55,13 @@ task('deploy:update_code', function () {
     if (input()->hasOption('tag')) {
         $commit = input()->getOption('tag');
     }
-    run('cd {{project_path}}');
-    run("[ -d .git ] || $git init");
-    run("$git config remote.origin.url >&- || $git remote add origin $repository");
-    run("$git fetch");
+    run("cd {{project_path}} && [ -d .git ] || $git init");
+    run("cd {{project_path}} && $git config remote.origin.url >&- || $git remote add origin $repository");
+    run("cd {{project_path}} && $git fetch");
     if (isset($commit)) {
-        run("$git reset --hard $commit");
+        run("cd {{project_path}} && $git reset --hard $commit");
     } else {
-        run("$git reset --hard origin/$branch");
+        run("cd {{project_path}} && $git reset --hard origin/$branch");
     }
 });
 
@@ -72,10 +71,10 @@ task('deploy:update_code', function () {
 desc('Deploy your project');
 task('deploy', [
     'deploy:info',
+    'deploy:prepare',
     'deploy:lock',
     // 'artisan:down',
     'deploy:update_code',
-    'deploy:prepare',
     'deploy:vendors',
     'artisan:migrate',
     'artisan:db:seed',
