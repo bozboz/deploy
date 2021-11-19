@@ -1,7 +1,7 @@
 {
     "name": "bozboz/deploy",
     "type": "library",
-    "require-dev": {
+    "require": {
         "deployer/deployer": "^6",
         "deployer/recipes": "^6.2"
     },
@@ -16,6 +16,5 @@
             "name": "Jim Hollington",
             "email": "jim@bozboz.co.uk"
         }
-    ],
-    "require": {}
+    ]
 }
