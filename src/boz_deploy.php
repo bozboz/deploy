@@ -88,6 +88,7 @@ task('deploy', [
 ]);
 
 after('deploy', 'success');
+after('deploy:failed', 'unlock');
 
 /**
  * Helper tasks
