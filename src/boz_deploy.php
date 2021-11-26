@@ -3,6 +3,8 @@ namespace Deployer;
 
 require 'recipe/common.php';
 
+set('name', 'Bozboz Deploy');
+
 set('current_path', function () {
     return get('project_path');
 });
