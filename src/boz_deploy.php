@@ -129,7 +129,7 @@ task('artisan:migrate:status', function () {
 
 desc('Execute artisan db:seed');
 task('artisan:db:seed', function () {
-    if (!get('seed_class')) {
+    if (!has('seed_class')) {
         return;
     }
     $output = run('{{bin/php}} {{release_path}}/artisan db:seed --force --class={{seed_class}}');
